@@ -5,17 +5,34 @@ const right = document.getElementById('right')
 const left = document.getElementById('left')
 
 up.addEventListener('click', () =>{
-    ball.style.top = ball.offsetTop - 50 + 'px'
+    if(ball.offsettop > -100 )
+      ball.style.top = ball.offsetTop - 50 + 'px'
+    else
+        ball.style.top = window.innerHeight + 'px'
   
 })
 down.addEventListener('click', () =>{
-    ball.style.top = ball.offsetTop + 50 + 'px'
+    if(ball.offsettop < window.innerHeight)
+      ball.style.top = ball.offsetTop + 50 + 'px'
+    else
+       ball.style.top = '-100px'
 
 })
 right.addEventListener('click', () =>{
-    ball.style.left = ball.offsetLeft + 50 + 'px'
+    if(ball.offsetLeft < window.innerWidth)
+       ball.style.left = ball.offsetLeft + 50 + 'px'
+       
+    else
+       ball.style.left = '-100px'
+
+    
 })
 left.addEventListener('click', () =>{
-    ball.style.left = ball.offsetLeft - 50 + 'px'
+    if(ball.offsetLeft > -100 )
+        ball.style.left = ball.offsetLeft - 50 + 'px'
+   else
+     ball.style.left = window.innerWidth + 'px'
+
+
 })
 
